@@ -24,8 +24,8 @@ INSERT INTO DEPARTMENT ("DepNo", "FacNo", "Name", "Head", "Building", "Fund") VA
 --TEACHER table
 INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary") VALUES (1,  3, 'Andrey Radionov', 'counselor', 1234567, '02-01-1993', 9000);
 INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary") VALUES (2,  3, 'Bogdan Deykalo', 'professor', 1234568, '02-01-1993', 3000);
-INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary") VALUES (3,  3, 'Lida Mozgovaya', 'assistant professor', 1234569, '02-01-1991', 2000);
-INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary") VALUES (4,  3, 'Ira Navrotskaya', 'assistant', 1234570, '02-01-1991', 2000);
+INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary") VALUES (3,  6, 'Lida Mozgovaya', 'assistant professor', 1234569, '02-01-1991', 2000);
+INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary") VALUES (4,  9, 'Ira Navrotskaya', 'assistant', 1234570, '02-01-1991', 2000);
 INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary") VALUES (5,  3, 'Ekaterina Shalamay', 'assistant professor', 1234571, '02-01-1991', 2000);
 INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary") VALUES (6,  3, 'Natalia Kriminskaya', 'assistant', 1234572, '02-01-1991', 2000);
 INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary") VALUES (7,  3, 'Nataliya Gayduk', 'assistant', 1234573, '02-01-1991', 2000);
@@ -46,14 +46,14 @@ INSERT INTO TEACHER
     'assistant',
     1234575,
     '02-01-1991',
-    2000,
+    900,
     400);
-INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary") VALUES (10, 3, 'Sergiy Goncharuk', 'assistant', 1234576, '02-01-1991', 2000);
+INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary") VALUES (10, 3, 'Sergiy Ivanov', 'assistant', 1234576, '02-01-1991', 2000);
 --SGROUP table
 INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "Rating") VALUES (1,  3, 2, 123, 30, 1,  8);
 INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "Rating") VALUES (2,  3, 2, 123, 49, 2,  7);
-INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "Rating") VALUES (3,  3, 2, 123, 49, 3,  12);
-INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "Rating") VALUES (4,  3, 1, 123, 49, 4,  12);
+INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "Rating") VALUES (3,  6, 2, 123, 49, 3,  12);
+INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "Rating") VALUES (4,  9, 1, 123, 49, NULL,  12);
 INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "Rating") VALUES (5,  3, 2, 123, 49, 5,  10);
 INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "Rating") VALUES (6,  3, 1, 123, 49, 6,  12);
 INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "Rating") VALUES (7,  3, 1, 123, 49, 7,  12);
@@ -72,27 +72,27 @@ INSERT INTO SUBJECT ("SbjNo", "Name") VALUES (8, 'High Mathematics 3');
 INSERT INTO SUBJECT ("SbjNo", "Name") VALUES (9, 'Psychology');
 INSERT INTO SUBJECT ("SbjNo", "Name") VALUES (10, 'English');
 --ROOM table
-INSERT INTO ROOM ("RomNo", "Num", "Seats", "Floor", "Building") VALUES (1, 123, 100, 5, 17);
-INSERT INTO ROOM ("RomNo", "Num", "Seats", "Floor", "Building") VALUES (2, 111, 80, 16, 8);
-INSERT INTO ROOM ("RomNo", "Num", "Seats", "Floor", "Building") VALUES (3, 123, 100, 4, 17);
-INSERT INTO ROOM ("RomNo", "Num", "Seats", "Floor", "Building") VALUES (4, 123, 100, 3, 17);
-INSERT INTO ROOM ("RomNo", "Num", "Seats", "Floor", "Building") VALUES (5, 123, 25, 2, 17);
+INSERT INTO ROOM ("RomNo", "Num", "Seats", "Floor", "Building") VALUES (1, 313, 30, 3, 6);
+INSERT INTO ROOM ("RomNo", "Num", "Seats", "Floor", "Building") VALUES (2, 313, 80, 3, 7);
+INSERT INTO ROOM ("RomNo", "Num", "Seats", "Floor", "Building") VALUES (3, 423, 100, 4, 17);
+INSERT INTO ROOM ("RomNo", "Num", "Seats", "Floor", "Building") VALUES (4, 123, 100, 1, 17);
+INSERT INTO ROOM ("RomNo", "Num", "Seats", "Floor", "Building") VALUES (5, 540, 100, 5, 17);
 INSERT INTO ROOM ("RomNo", "Num", "Seats", "Floor", "Building") VALUES (6, 123, 150, 1, 17);
 INSERT INTO ROOM ("RomNo", "Num", "Seats", "Floor", "Building") VALUES (7, 123, 100, 1, 17);
-INSERT INTO ROOM ("RomNo", "Num", "Seats", "Floor", "Building") VALUES (8, 123, 30, 1, 17);
-INSERT INTO ROOM ("RomNo", "Num", "Seats", "Floor", "Building") VALUES (9, 123, 100, 11, 17);
-INSERT INTO ROOM ("RomNo", "Num", "Seats", "Floor", "Building") VALUES (10, 123, 15, 4, 17);
+INSERT INTO ROOM ("RomNo", "Num", "Seats", "Floor", "Building") VALUES (8, 123, 25, 1, 17);
+INSERT INTO ROOM ("RomNo", "Num", "Seats", "Floor", "Building") VALUES (9, 123, 100, 1, 17);
+INSERT INTO ROOM ("RomNo", "Num", "Seats", "Floor", "Building") VALUES (10, 123, 15, 1, 17);
 --LECTURE table
-INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (2, 1, 1, 4, 'lection', 'Mon', 1, 1);
-INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (2, 1, 1, 4, 'lection', 'Mon', 1, 2);
-INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (2, 1, 1, 4, 'lection', 'Mon', 1, 3);
-INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (2, 1, 1, 4, 'lection', 'Mon', 1, 4);
-INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (2, 1, 1, 4, 'practice','Mon', 1, 5);
-INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (2, 1, 1, 4, 'lection', 'Tue', 1, 1);
-INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (2, 1, 1, 4, 'lab',     'Tue', 1, 2);
-INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (2, 1, 1, 4, 'lab',     'Tue', 1, 3);
-INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (2, 1, 1, 4, 'lab',     'Tue', 1, 4);
-INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (2, 1, 1, 4, 'lab',     'Tue', 1, 5);
+INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (2, 1,    1, 1, 'lection', 'Mon', 1, 1);
+INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (2, 1,    1, 1, 'lection', 'Mon', 1, 2);
+INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (NULL, 1,    1, 1, 'lection', 'Wed', 1, 3);
+INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (2, NULL, 1, 1, 'lection', 'Mon', 1, 4);
+INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (8, 1,    1, 2, 'practice','Mon', 1, 5);
+INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (2, 1,    1, 4, 'lection', 'Tue', 1, 1);
+INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (2, 1,    1, 4, 'lab',     'Tue', 1, 2);
+INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (2, 1,    1, 4, 'lab',     'Tue', 1, 3);
+INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (2, 1,    1, 4, 'lab',     'Tue', 1, 4);
+INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (2, 1,    1, 4, 'lab',     'Tue', 1, 5);
 --Updating rows in tables
 UPDATE FACULTY SET "Dean"='Bob', "Fund"=3467.00 WHERE "Name"='economy';
 UPDATE DEPARTMENT SET "Head"='Frank', "Building"=3 WHERE "DepNo" = 3;
