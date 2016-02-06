@@ -83,3 +83,31 @@ ON
   SGROUP."Curator" = TEACHER."TchNo"
 WHERE
   LOWER(DEPARTMENT."Name") LIKE '%p%';
+--6.
+--TODO
+--7.
+SELECT
+  R."Num"      AS "Название аудитории",
+  R."Building" AS "Корпус",
+  DS."Name"
+FROM
+  ROOM R
+JOIN LECTURE L
+ON
+  L."RomNo" = R."RomNo"
+JOIN TEACHER T
+ON
+  T."TchNo" = L."TchNo"
+JOIN SGROUP S
+ON
+  S."GrpNo" = L."GrpNo"
+JOIN DEPARTMENT DS
+ON
+  DS."DepNo" = S."DepNo"
+JOIN DEPARTMENT DT
+ON
+  DT."DepNo" = T."DepNo"
+WHERE
+  R."Floor"   IN (1, 3, 4, 5, 7, 9, 10)
+AND DS."Name" IN ('Pathology', 'Software of Systems')
+AND DT."Name" IN ('Pathology', 'Software of Systems');

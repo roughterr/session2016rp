@@ -26,7 +26,7 @@ INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salar
 INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary") VALUES (2,  3, 'Bogdan Deykalo', 'professor', 1234568, '02-01-1993', 3000);
 INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary") VALUES (3,  6, 'Lida Mozgovaya', 'assistant professor', 1234569, '02-01-1991', 2000);
 INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary") VALUES (4,  9, 'Ira Navrotskaya', 'assistant', 1234570, '02-01-1991', 2000);
-INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary") VALUES (5,  3, 'Ekaterina Shalamay', 'assistant professor', 1234571, '02-01-1991', 2000);
+INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary") VALUES (5,  2, 'Ekaterina Shalamay', 'assistant professor', 1234571, '02-01-1991', 2000);
 INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary") VALUES (6,  3, 'Natalia Kriminskaya', 'assistant', 1234572, '02-01-1991', 2000);
 INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary") VALUES (7,  3, 'Nataliya Gayduk', 'assistant', 1234573, '02-01-1991', 2000);
 INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary") VALUES (8,  3, 'Katya Yudenko', 'professor', 1234574, '02-01-1991', 3000);
@@ -58,8 +58,8 @@ INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "R
 INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "Rating") VALUES (6,  3, 1, 123, 49, 6,  12);
 INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "Rating") VALUES (7,  3, 1, 123, 49, 7,  12);
 INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "Rating") VALUES (8,  3, 2, 123, 49, 8,  9);
-INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "Rating") VALUES (9,  3, 2, 123, 49, 9,  5);
-INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "Rating") VALUES (10, 3, 2, 123, 49, 10, 11);
+INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "Rating") VALUES (9,  2, 2, 123, 49, 9,  5);
+INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "Rating") VALUES (10, 9, 2, 123, 49, 10, 11);
 --SUBJECT table
 INSERT INTO SUBJECT ("SbjNo", "Name") VALUES (1, 'Operating Systems');
 INSERT INTO SUBJECT ("SbjNo", "Name") VALUES (2, 'Databases');
@@ -89,10 +89,10 @@ INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", 
 INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (2, NULL, 1, 1, 'lection', 'Mon', 1, 4);
 INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (8, 1,    1, 2, 'practice','Mon', 1, 5);
 INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (2, 1,    1, 4, 'lection', 'Tue', 1, 1);
-INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (2, 1,    1, 4, 'lab',     'Tue', 1, 2);
+INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (5, 1,    1, 4, 'lab',     'Tue', 1, 2);
 INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (2, 1,    1, 4, 'lab',     'Tue', 1, 3);
-INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (2, 1,    1, 4, 'lab',     'Tue', 1, 4);
-INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (2, 1,    1, 4, 'lab',     'Tue', 1, 5);
+INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (5, 9,    1, 4, 'lab',     'Tue', 1, 4);
+INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (2, 10,    1, 4, 'lab',     'Tue', 1, 5);
 --Updating rows in tables
 UPDATE FACULTY SET "Dean"='Bob', "Fund"=3467.00 WHERE "Name"='economy';
 UPDATE DEPARTMENT SET "Head"='Frank', "Building"=3 WHERE "DepNo" = 3;
