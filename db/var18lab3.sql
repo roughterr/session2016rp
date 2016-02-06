@@ -96,3 +96,24 @@ AND LECTURE."Day" IN ('Mon', 'Wed', 'Thu', 'Sat');
 -- 6. Вывести пары имен преподавателей,  удовлетворяющих следующему условию:
 -- первый преподаватель является куратором группы, имеющей рейтинг больше, чем
 -- в два раза, рейтинга группы, куратором которой является второй преподаватель
+SELECT
+  TEACHERA."Name",
+  TEACHERB."Name"
+FROM
+  SGROUP SGROUPA
+FULL JOIN SGROUP SGROUPB
+ON
+  NOT SGROUPB."GrpNo" = SGROUPA."GrpNo"
+LEFT JOIN teacher TEACHERA
+ON
+  TEACHERA."TchNo" = SGROUPA."Curator"
+LEFT JOIN teacher TEACHERB
+ON
+  TEACHERB."TchNo" = SGROUPB."Curator"
+WHERE
+  (
+    SGROUPB."Rating" * 2
+  )
+  < SGROUPA."Rating"
+ORDER BY
+  1;
