@@ -1,0 +1,1 @@
+This folder contains solution for subjects that belong to session of 2016 year. These data are going to be commited to the repository.
