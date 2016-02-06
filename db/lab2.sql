@@ -50,7 +50,7 @@ INSERT INTO TEACHER
     400);
 INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary") VALUES (10, 3, 'Sergiy Ivanov', 'assistant', 1234576, '02-01-1991', 2000);
 --SGROUP table
-INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "Rating") VALUES (1,  3, 2, 123, 30, 1,  8);
+INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "Rating") VALUES (1,  1, 2, 123, 30, 1,  8);
 INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "Rating") VALUES (2,  3, 2, 123, 49, 2,  7);
 INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "Rating") VALUES (3,  6, 2, 123, 49, 3,  12);
 INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "Rating") VALUES (4,  9, 1, 123, 49, NULL,  12);
@@ -58,7 +58,7 @@ INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "R
 INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "Rating") VALUES (6,  3, 1, 123, 49, 6,  12);
 INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "Rating") VALUES (7,  3, 1, 123, 49, 7,  12);
 INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "Rating") VALUES (8,  3, 2, 123, 49, 8,  9);
-INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "Rating") VALUES (9,  2, 2, 123, 49, 9,  5);
+INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "Rating") VALUES (9,  2, 1, 123, 49, 9,  5);
 INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "Rating") VALUES (10, 9, 2, 123, 49, 10, 11);
 --SUBJECT table
 INSERT INTO SUBJECT ("SbjNo", "Name") VALUES (1, 'Operating Systems');
@@ -75,7 +75,7 @@ INSERT INTO SUBJECT ("SbjNo", "Name") VALUES (10, 'English');
 INSERT INTO ROOM ("RomNo", "Num", "Seats", "Floor", "Building") VALUES (1, 313, 30, 3, 6);
 INSERT INTO ROOM ("RomNo", "Num", "Seats", "Floor", "Building") VALUES (2, 313, 80, 3, 7);
 INSERT INTO ROOM ("RomNo", "Num", "Seats", "Floor", "Building") VALUES (3, 423, 100, 4, 17);
-INSERT INTO ROOM ("RomNo", "Num", "Seats", "Floor", "Building") VALUES (4, 123, 100, 1, 17);
+INSERT INTO ROOM ("RomNo", "Num", "Seats", "Floor", "Building") VALUES (4, 123, 100, 1, 6);
 INSERT INTO ROOM ("RomNo", "Num", "Seats", "Floor", "Building") VALUES (5, 540, 100, 5, 17);
 INSERT INTO ROOM ("RomNo", "Num", "Seats", "Floor", "Building") VALUES (6, 123, 150, 1, 17);
 INSERT INTO ROOM ("RomNo", "Num", "Seats", "Floor", "Building") VALUES (7, 123, 100, 1, 17);
@@ -89,10 +89,10 @@ INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", 
 INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (2, NULL, 1, 1, 'lection', 'Mon', 1, 4);
 INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (8, 1,    1, 2, 'practice','Mon', 1, 5);
 INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (2, 1,    1, 4, 'lection', 'Tue', 1, 1);
-INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (5, 1,    1, 4, 'lab',     'Tue', 1, 2);
+INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (7, 1,    1, 4, 'lab',     'Wed', 1, 2);
 INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (2, 1,    1, 4, 'lab',     'Tue', 1, 3);
-INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (5, 9,    1, 4, 'lab',     'Tue', 1, 4);
-INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (2, 10,    1, 4, 'lab',     'Tue', 1, 5);
+INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (5, 9,    1, 4, 'lab',     'Wed', 1, 4);
+INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (2, 10,    1, 4, 'lab',     'Wed', 1, 5);
 --Updating rows in tables
 UPDATE FACULTY SET "Dean"='Bob', "Fund"=3467.00 WHERE "Name"='economy';
 UPDATE DEPARTMENT SET "Head"='Frank', "Building"=3 WHERE "DepNo" = 3;
