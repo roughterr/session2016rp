@@ -3,14 +3,14 @@
 INSERT INTO FACULTY ("FacNo", "Name", "Building", "Fund") VALUES (1, 'Aircraft',   '3', 100);
 INSERT INTO FACULTY ("FacNo", "Name", "Building", "Fund") VALUES (2, 'History',    '4', 500);
 INSERT INTO FACULTY ("FacNo", "Name", "Building", "Fund") VALUES (3, 'Law',        '5', 400);
-INSERT INTO FACULTY ("FacNo", "Name", "Building", "Fund") VALUES (4, 'Economics',  '6', 500);
+INSERT INTO FACULTY ("FacNo", "Name", "Building", "Fund") VALUES (4, 'economy',  '6', 500);
 INSERT INTO FACULTY ("FacNo", "Name", "Building", "Fund") VALUES (5, 'Math',       '7', 300);
 INSERT INTO FACULTY ("FacNo", "Name", "Building", "Fund") VALUES (6, 'Management', '8', 300);
 INSERT INTO FACULTY ("FacNo", "Name", "Building", "Fund") VALUES (7, 'SoftwareEn', '17', 700);
 INSERT INTO FACULTY ("FacNo", "Name", "Building", "Fund") VALUES (8, 'Biology',    '1', 100);
 INSERT INTO FACULTY ("FacNo", "Name", "Building", "Fund") VALUES (9, 'Chemistry',  '2', 200);
 INSERT INTO FACULTY ("FacNo", "Name", "Building", "Fund") VALUES (10, 'Geography', '9', 400);
---DEPARTMENT table
+--Cathedra
 INSERT INTO DEPARTMENT ("DepNo", "FacNo", "Name", "Head", "Building", "Fund") VALUES (1, 7, 'Department of Computer Science', 'Ivo Bobul', 17, 50);
 INSERT INTO DEPARTMENT ("DepNo", "FacNo", "Name", "Head", "Building", "Fund") VALUES (2, 7, 'Software of Systems', 'Derechina Olga', 17, 20);
 INSERT INTO DEPARTMENT ("DepNo", "FacNo", "Name", "Head", "Building", "Fund") VALUES (3, 9, 'Astronomy', 'Eugene Tooz', 2, 10);
@@ -30,16 +30,33 @@ INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salar
 INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary") VALUES (6,  3, 'Natalia Kriminskaya', 'assistant', 1234572, '02-01-1991', 2000);
 INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary") VALUES (7,  3, 'Nataliya Gayduk', 'assistant', 1234573, '02-01-1991', 2000);
 INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary") VALUES (8,  3, 'Katya Yudenko', 'professor', 1234574, '02-01-1991', 3000);
-INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary") VALUES (9,  3, 'Yulia Ryabokon', 'assistant', 1234575, '02-01-1991', 2000);
+INSERT INTO TEACHER
+  ( "TchNo",
+    "DepNo",
+    "Name",
+    "Post",
+    "Tel",
+    "Hiredate",
+    "Salary",
+    "Commission")
+  VALUES
+  ( 9,
+    3,
+    'Yulia Ryabokon',
+    'assistant',
+    1234575,
+    '02-01-1991',
+    2000,
+    400);
 INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary") VALUES (10, 3, 'Sergiy Goncharuk', 'assistant', 1234576, '02-01-1991', 2000);
 --SGROUP table
 INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "Rating") VALUES (1,  3, 2, 123, 30, 1,  8);
 INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "Rating") VALUES (2,  3, 2, 123, 49, 2,  7);
 INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "Rating") VALUES (3,  3, 2, 123, 49, 3,  12);
-INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "Rating") VALUES (4,  3, 2, 123, 49, 4,  12);
+INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "Rating") VALUES (4,  3, 1, 123, 49, 4,  12);
 INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "Rating") VALUES (5,  3, 2, 123, 49, 5,  10);
-INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "Rating") VALUES (6,  3, 2, 123, 49, 6,  12);
-INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "Rating") VALUES (7,  3, 2, 123, 49, 7,  12);
+INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "Rating") VALUES (6,  3, 1, 123, 49, 6,  12);
+INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "Rating") VALUES (7,  3, 1, 123, 49, 7,  12);
 INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "Rating") VALUES (8,  3, 2, 123, 49, 8,  9);
 INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "Rating") VALUES (9,  3, 2, 123, 49, 9,  5);
 INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "Rating") VALUES (10, 3, 2, 123, 49, 10, 11);
@@ -77,3 +94,15 @@ INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", 
 INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (2, 1, 1, 4, 'lab',     'Tue', 1, 4);
 INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (2, 1, 1, 4, 'lab',     'Tue', 1, 5);
 --Updating rows in tables
+UPDATE FACULTY SET "Dean"='Bob', "Fund"=3467.00 WHERE "Name"='economy';
+UPDATE DEPARTMENT SET "Head"='Frank', "Building"=3 WHERE "DepNo" = 3;
+UPDATE TEACHER A
+SET "Commission" =
+  (
+    SELECT "Commission" * 0.25
+    FROM TEACHER B
+    WHERE B."TchNo" = A."TchNo"
+  )
+WHERE "Post" = 'assistant';
+UPDATE SGROUP SET "Rating"=0 WHERE "Course" = 1;
+UPDATE SUBJECT SET "Name"='html' WHERE "Name"='internet';
