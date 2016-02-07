@@ -22,33 +22,26 @@ INSERT INTO DEPARTMENT ("DepNo", "FacNo", "Name", "Head", "Building", "Fund") VA
 INSERT INTO DEPARTMENT ("DepNo", "FacNo", "Name", "Head", "Building", "Fund") VALUES (9, 8, 'Pathology', 'Maria Kutsman', 1, 10);
 INSERT INTO DEPARTMENT ("DepNo", "FacNo", "Name", "Head", "Building", "Fund") VALUES (10, 5, 'Applied Mathematics and Theoretical Physics', 'Evgen Kashyn', 7, 30);
 --TEACHER table
-INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary") VALUES (1,  3, 'Andrey Radionov', 'counselor', 1234567, '02-01-1993', 9000);
-INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary") VALUES (2,  3, 'Bogdan Deykalo', 'professor', 1234568, '02-01-1993', 3000);
-INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary") VALUES (3,  6, 'Lida Mozgovaya', 'assistant professor', 1234569, '02-01-1991', 2000);
-INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary") VALUES (4,  9, 'Ira Navrotskaya', 'assistant', 1234570, '02-01-1991', 2000);
-INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary") VALUES (5,  2, 'Ekaterina Shalamay', 'assistant professor', 1234571, '02-01-1991', 2000);
-INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary") VALUES (6,  3, 'Natalia Kriminskaya', 'assistant', 1234572, '02-01-1991', 2000);
-INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary") VALUES (7,  3, 'Nataliya Gayduk', 'assistant', 1234573, '02-01-1991', 2000);
-INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary") VALUES (8,  3, 'Katya Yudenko', 'professor', 1234574, '02-01-1991', 3000);
-INSERT INTO TEACHER
-  ( "TchNo",
-    "DepNo",
-    "Name",
-    "Post",
-    "Tel",
-    "Hiredate",
-    "Salary",
-    "Commission")
-  VALUES
-  ( 9,
-    3,
-    'Yulia Ryabokon',
-    'assistant',
-    1234575,
-    '02-01-1991',
-    900,
-    400);
-INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary") VALUES (10, 3, 'Sergiy Ivanov', 'assistant', 1234576, '02-01-1991', 2000);
+INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary", "Commission") 
+  VALUES (1,  3, 'Andrey Radionov', 'counselor', 1234567, '02-01-1993', 9000, 500);
+INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary", "Commission") 
+  VALUES (2,  3, 'Bogdan Deykalo', 'professor', 1234568, '02-01-1993', 3000, 100);
+INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary")
+  VALUES (3,  6, 'Lida Mozgovaya', 'assistant professor', 1234569, '02-01-1991', 2000);
+INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary")
+  VALUES (4,  9, 'Ira Navrotskaya', 'assistant', 1234570, '02-01-1991', 2000);
+INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary")
+  VALUES (5,  2, 'Ekaterina Shalamay', 'assistant professor', 1234571, '02-01-1991', 2000);
+INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary", "Commission")
+  VALUES (6,  3, 'Natalia Kriminskaya', 'professor', 1234572, '07-02-2001', 2000, 150);
+INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary")
+  VALUES (7,  3, 'Nataliya Gayduk', 'assistant', 1234573, '02-01-1991', 2000);
+INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary", "Commission")
+  VALUES (8, 3, 'Katya Yudenko', 'professor', 1234574, '04.04.2000', 2500, 400);
+INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary", "Commission")
+  VALUES (9, 3, 'Yulia Ryabokon', 'assistant', 1234575,'02-01-1991', 900, 400);
+INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary")
+  VALUES (10, 3, 'Sergiy Ivanov', 'assistant', 1234576, '02-01-1991', 2000);
 --SGROUP table
 INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "Rating") VALUES (1,  1, 2, 123, 30, 1,  8);
 INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "Rating") VALUES (2,  3, 2, 123, 49, 2,  7);
