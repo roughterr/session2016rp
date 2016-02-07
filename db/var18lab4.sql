@@ -98,72 +98,19 @@ ORDER BY
 -- - к-во преподавателей в корпусе     - Кол-во преподавателей
 -- - к-во номеров телефонов в корпусе  - Кол-во телефонов
 SELECT
-  BUILDING AS "Корпус"
-, (
-    SELECT
-      COUNT(*)
-    FROM
-      DEPARTMENT
-    WHERE
-      DEPARTMENT."Building" = BUILDING
-    OR
-      (
-        BUILDING                IS NULL
-      AND DEPARTMENT."Building" IS NULL
-      )
-  ) AS "Кол-во кафедр"
-,(
-    SELECT
-      COUNT(DISTINCT FACULTY."FacNo")
-    FROM
-      FACULTY
-    JOIN DEPARTMENT
-    ON
-      DEPARTMENT."FacNo" = FACULTY."FacNo"
-    WHERE
-      DEPARTMENT."Building" = BUILDING
-    OR
-      (
-        BUILDING                IS NULL
-      AND DEPARTMENT."Building" IS NULL
-      )
-  ) AS "Кол-во факультетов"
-, (
-    SELECT
-      COUNT(DISTINCT TEACHER."TchNo")
-    FROM
-      TEACHER
-    JOIN DEPARTMENT
-    ON
-      DEPARTMENT."DepNo" = TEACHER."DepNo"
-    WHERE
-      DEPARTMENT."Building" = BUILDING
-    OR
-      (
-        BUILDING                IS NULL
-      AND DEPARTMENT."Building" IS NULL
-      )
-  ) AS "Кол-во преподавателей"
-, (
-    SELECT
-      COUNT(DISTINCT TEACHER."Tel")
-    FROM
-      TEACHER
-    JOIN DEPARTMENT
-    ON
-      DEPARTMENT."DepNo" = TEACHER."DepNo"
-    WHERE
-      DEPARTMENT."Building" = BUILDING
-    OR
-      (
-        BUILDING                IS NULL
-      AND DEPARTMENT."Building" IS NULL
-      )
-  ) AS "Кол-во телефонов"
+  DEPARTMENT."Building" AS "Корпус"
+, COUNT(DISTINCT DEPARTMENT."DepNo") AS "Кол-во кафедр"
+, COUNT(DISTINCT FACULTY."FacNo") AS "Кол-во факультетов"
+, COUNT(DISTINCT TEACHER."TchNo") AS "Кол-во преподавателей"
+, COUNT(DISTINCT TEACHER."Tel") AS "Кол-во телефонов"
 FROM
-  (
-    SELECT DISTINCT
-      DEPARTMENT."Building" AS BUILDING
-    FROM
-      DEPARTMENT
-  );
+  DEPARTMENT
+JOIN FACULTY
+ON
+  FACULTY."FacNo" = DEPARTMENT."FacNo"
+LEFT JOIN TEACHER
+ON
+  TEACHER."DepNo" = DEPARTMENT."DepNo"
+GROUP BY
+  DEPARTMENT."Building"
+ORDER BY 1;
