@@ -86,9 +86,21 @@ INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", 
 INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (8, 1,    1, 2, 'practice','Mon', 1, 5);
 INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (2, 1,    6, 4, 'lection', 'Tue', 1, 1);
 INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (7, 1,    1, 4, 'lab',     'Wed', 1, 2);
-INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (2, 1,    1, 4, 'lab',     'Tue', 1, 3);
+INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (7, 1,    1, 4, 'lab',     'Tue', 1, 3);
 INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (5, 9,    1, 4, 'lab',     'Wed', 1, 4);
 INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") VALUES (2, 10,    1, 4, 'lab',     'Wed', 1, 5);
+INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") 
+  VALUES (11, 10,    7, 4, 'lab',     'Mon', 1, 1);
+INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") 
+  VALUES (11, 10,    7, 4, 'lab',     'Tue', 2, 2);
+INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") 
+  VALUES (11, 10,    7, 4, 'lab',     'Wed', 1, 3);
+INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") 
+  VALUES (3, 9,    7, 2, 'lab',     'Mon', 1, 1);
+INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") 
+  VALUES (3, 9,    7, 3, 'lab',     'Tue', 2, 2);
+INSERT INTO LECTURE ("TchNo", "GrpNo", "SbjNo", "RomNo", "Type", "Day", "Week", "Lesson") 
+  VALUES (3, 9,    7, 4, 'lab',     'Wed', 1, 3);
 --Updating rows in tables
 UPDATE FACULTY SET "Dean"='Bob', "Fund"=3467.00 WHERE "Name"='economy';
 UPDATE DEPARTMENT SET "Head"='Frank', "Building"=3 WHERE "DepNo" = 3;

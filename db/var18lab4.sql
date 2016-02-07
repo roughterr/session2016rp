@@ -98,11 +98,11 @@ ORDER BY
 -- - к-во преподавателей в корпусе     - Кол-во преподавателей
 -- - к-во номеров телефонов в корпусе  - Кол-во телефонов
 SELECT
-  DEPARTMENT."Building" AS "Корпус"
+  DEPARTMENT."Building"              AS "Корпус"
 , COUNT(DISTINCT DEPARTMENT."DepNo") AS "Кол-во кафедр"
-, COUNT(DISTINCT FACULTY."FacNo") AS "Кол-во факультетов"
-, COUNT(DISTINCT TEACHER."TchNo") AS "Кол-во преподавателей"
-, COUNT(DISTINCT TEACHER."Tel") AS "Кол-во телефонов"
+, COUNT(DISTINCT FACULTY."FacNo")    AS "Кол-во факультетов"
+, COUNT(DISTINCT TEACHER."TchNo")    AS "Кол-во преподавателей"
+, COUNT(DISTINCT TEACHER."Tel")      AS "Кол-во телефонов"
 FROM
   DEPARTMENT
 JOIN FACULTY
@@ -113,4 +113,37 @@ ON
   TEACHER."DepNo" = DEPARTMENT."DepNo"
 GROUP BY
   DEPARTMENT."Building"
-ORDER BY 1;
+ORDER BY
+  1;
+-- 6. Для каждой тройки значений преподаватель-группа-дисциплина таких, что
+-- указанный преподаватель преподает указанной группе указанную дисциплину,
+-- вывести
+-- - имя преподавателя,
+-- - номер группы,
+-- - название дисциплины,
+-- - количество занятий, которое имеет это этот преподаватель для этой группы
+-- по этой дисциплине,
+-- при условии, что:
+-- - УКАЗАННЫЙ ПРЕПОДАВАТЕЛЬ ПРЕПОДАЕТ УКАЗАННОЙ ГРУППЕ УКАЗАННУЮ ДИСЦИПЛИНУ НЕ
+-- БОЛЕЕ, ЧЕМ В 3-Х АУДИТОРИЯХ
+SELECT
+  TEACHER."Name"  AS "Имя преподавателя"
+, LECTURE."GrpNo" AS "Номер группы"
+, SUBJECT."Name"  AS "Название дисциплины"
+, COUNT(*)        AS "Количество занятий"
+FROM
+  teacher
+JOIN lecture
+ON
+  LECTURE."TchNo" = TEACHER."TchNo"
+JOIN SUBJECT
+ON
+  SUBJECT."SbjNo" = LECTURE."SbjNo"
+GROUP BY
+  TEACHER."Name"
+, LECTURE."GrpNo"
+, SUBJECT."Name"
+HAVING
+  COUNT (DISTINCT LECTURE."RomNo") < 3
+ORDER BY
+  teacher."Name" ;
