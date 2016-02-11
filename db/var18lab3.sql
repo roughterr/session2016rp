@@ -3,8 +3,8 @@
 -- работу и деления ставки на надбавку (столбец с именем «Выражение»). Что
 -- получается в результате вычисления hiredate - (Salary/Commission)?
 SELECT
-  "Name",
-  CASE
+  "Name"
+, CASE
     WHEN "Commission" = 0
     THEN NULL
     ELSE "Hiredate" - ("Salary"/"Commission")
@@ -15,8 +15,8 @@ DESC TEACHER;
 -- 2. По каждой аудитории корпуса 6 вывести ее номер и названия кафедр, на
 -- которых проволятся занятия в этой аудитории студентам 1 курса.
 SELECT
-  ROOM."Num",
-  DEPARTMENT."Name"
+  ROOM."Num"
+, DEPARTMENT."Name"
 FROM
   ROOM
 JOIN LECTURE
@@ -78,9 +78,9 @@ GROUP BY
 -- проводят занятия типа 'лабораторная' в один из следующих дней: понедельник,
 -- середа, четверг, суббота.
 SELECT
-  ROOM."Num",
-  ROOM."Building",
-  LECTURE."Day"
+  ROOM."Num"
+, ROOM."Building"
+, LECTURE."Day"
 FROM
   ROOM
 JOIN LECTURE
@@ -97,8 +97,8 @@ AND LECTURE."Day" IN ('Mon', 'Wed', 'Thu', 'Sat');
 -- первый преподаватель является куратором группы, имеющей рейтинг больше, чем
 -- в два раза, рейтинга группы, куратором которой является второй преподаватель
 SELECT
-  TEACHERA."Name",
-  TEACHERB."Name"
+  TEACHERA."Name"
+, TEACHERB."Name"
 FROM
   SGROUP SGROUPA
 FULL JOIN SGROUP SGROUPB
@@ -125,17 +125,72 @@ ORDER BY
 -- 01.01.1995-31.12.1996 либо в диапазоне дат 01.01.1998-07.08.1999 И
 -- их непосредственный подчиненный либо является ассистентом либо имеет
 -- зарплату (salary+commission) в диапазоне 2000-3000
+-- a counselor is a manager of a professor
+-- a professor is a manager of an assistant professor
+-- an assistant professor is a manager of an assistant
 SELECT
-  TEACHER."Name",
-  TEACHER."Hiredate"
+  T1."Name"
+, T1."Hiredate"
 FROM
-  TEACHER
+  TEACHER T1
+INNER JOIN DEPARTMENT D1
+ON
+  D1."DepNo" = T1."DepNo"
 WHERE
+  --counselor has no manager
+  NOT T1."Post"   = 'counselor'
+AND NOT T1."Post" = 'assistant'
+AND
   (
-    TEACHER."Salary" > 2000
-  OR
+    T1."Salary"      > 2000
+  OR T1."Commission" > (T1."Salary" / 4)
+  )
+AND
+  (
     (
-      TEACHER."Commission" > (TEACHER."Salary" / 4)
+      SELECT
+        COUNT(*)
+      FROM
+        TEACHER T2
+      INNER JOIN DEPARTMENT D2
+      ON
+        D2."DepNo" = T2."DepNo"
+      WHERE
+        T2."Post" =
+        CASE
+          WHEN T2."Post" = 'assistant professor'
+          THEN 'professor'
+          ELSE 'counselor'
+        END
+      AND T2."Hiredate" BETWEEN '01-01-1998' AND '07-08-1999'
+      AND D2."DepNo" = D1."DepNo"
     )
-  );
---TODO figure out how to get the manager of a teacher
+    > 0
+  )
+AND
+  (
+    SELECT
+      COUNT(*)
+    FROM
+      TEACHER T3
+    INNER JOIN DEPARTMENT D3
+    ON
+      D3."DepNo" = T3."DepNo"
+    WHERE
+      T3."Post" = 'assistant professor'
+    OR
+      (
+        T3."Post" =
+        CASE
+          WHEN T3."Post" = 'counselor'
+          THEN 'professor'
+          ELSE 'assistant professor'
+        END
+      AND
+        (
+          T3."Salary" + T3."Commission" BETWEEN 2000 AND 3000
+        )
+      AND D3."DepNo" = D1."DepNo"
+      )
+  )
+  > 0;
