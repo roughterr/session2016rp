@@ -12,16 +12,17 @@ INSERT INTO FACULTY ("FacNo", "Name", "Building", "Fund", "Dean")
 VALUES (9, 'Chemistry',  '2', 200, 'Sergiy Ivanov');
 INSERT INTO FACULTY ("FacNo", "Name", "Building", "Fund") VALUES (10, 'Geography', '9', 400);
 --Cathedra
-INSERT INTO DEPARTMENT ("DepNo", "FacNo", "Name", "Head", "Building", "Fund") VALUES (1, 7, 'Department of Computer Science', 'Ivo Bobul', 17, 50);
+INSERT INTO DEPARTMENT ("DepNo", "FacNo", "Name", "Head", "Building", "Fund") VALUES (1, 7, 'Department of Computer Science', 'Ivo Bobul', 8, 50);
 INSERT INTO DEPARTMENT ("DepNo", "FacNo", "Name", "Head", "Building", "Fund") VALUES (2, 7, 'Software of Systems', 'Derechina Olga', 17, 20);
 INSERT INTO DEPARTMENT ("DepNo", "FacNo", "Name", "Head", "Building", "Fund") VALUES (3, 9, 'Astronomy', 'Eugene Tooz', 2, 10);
 INSERT INTO DEPARTMENT ("DepNo", "FacNo", "Name", "Head", "Building", "Fund") VALUES (4, 9, 'Chemistry', 'Yana Nyzhegorodova', 2, 30);
 INSERT INTO DEPARTMENT ("DepNo", "FacNo", "Name", "Head", "Building", "Fund") VALUES (5, 9, 'Materials Science and Metallurgy', 'Ksyusha Perevertun', 2, 10);
 INSERT INTO DEPARTMENT ("DepNo", "FacNo", "Name", "Head", "Building", "Fund") VALUES (6, 9, 'Physics', 'Daniel Molina', 2, 10);
-INSERT INTO DEPARTMENT ("DepNo", "FacNo", "Name", "Head", "Building", "Fund") VALUES (7, 9, 'Physics', 'Dmitriy Kostash', 1, 10);
+INSERT INTO DEPARTMENT ("DepNo", "FacNo", "Name", "Head", "Building", "Fund") VALUES (7, 9, 'Neclear Physics', 'Dmitriy Kostash', 1, 10);
 INSERT INTO DEPARTMENT ("DepNo", "FacNo", "Name", "Head", "Building", "Fund") VALUES (8, 8, 'Biochemistry', 'Asya Subbotina', NULL, 10);
 INSERT INTO DEPARTMENT ("DepNo", "FacNo", "Name", "Head", "Building", "Fund") VALUES (9, 8, 'Pathology', 'Maria Kutsman', 1, 10);
 INSERT INTO DEPARTMENT ("DepNo", "FacNo", "Name", "Head", "Building", "Fund") VALUES (10, 5, 'Applied Mathematics and Theoretical Physics', 'Evgen Kashyn', 7, 30);
+INSERT INTO DEPARTMENT ("DepNo", "FacNo", "Name", "Head", "Building", "Fund") VALUES (11, 7, 'TEC', 'Reinaldo Powell', 7, 30);
 --TEACHER table
 INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary", "Commission") 
   VALUES (1,  3, 'Andrey Radionov', 'counselor', 1234567, '02-01-1993', 9000, 500);
@@ -32,11 +33,11 @@ INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salar
 INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary")
   VALUES (4,  9, 'Ira Navrotskaya', 'assistant', 1234570, '02-01-1991', 2000);
 INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary")
-  VALUES (5,  2, 'Ekaterina Shalamay', 'assistant professor', 7777777, '02-01-1991', 2000);
+  VALUES (5,  2, 'Ekaterina Shalamay', 'assistant professor', 7777777, '10-04-1993', 2000);
 INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary", "Commission")
   VALUES (6,  3, 'Natalia Kriminskaya', 'professor', 7777777, '07-02-2001', 2000, 150);
 INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary")
-  VALUES (7,  3, 'Nataliya Gayduk', 'assistant', 1234573, '02-01-1991', 2000);
+  VALUES (7,  3, 'Nataliya Gayduk', 'assistant', 1234573, '30-01-1991', 2000);
 INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary", "Commission")
   VALUES (8, 3, 'Katya Yudenko', 'professor', 7777777, '04.04.2000', 2500, 400);
 INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary", "Commission")
@@ -45,6 +46,8 @@ INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salar
   VALUES (10, 3, 'Sergiy Ivanov', 'professor', 1234576, '02-01-1991', 2000);
 INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary")
   VALUES (11, 8, 'Anna Udina', 'assistant', 1122247, '07-02-2016', 2500);
+INSERT INTO TEACHER ("TchNo", "DepNo", "Name", "Post", "Tel", "Hiredate", "Salary", "Commission")
+  VALUES (12, 9, 'Ekaterina Uzvarik', 'professor', 7777717, '04.07.2008', 2500, 400);
 --SGROUP table
 INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "Rating") VALUES (1,  1, 2, 123, 30, 1,  8);
 INSERT INTO SGROUP ("GrpNo", "DepNo", "Course", "Num", "Quantity", "Curator", "Rating") VALUES (2,  3, 2, 124, 49, 2,  7);
