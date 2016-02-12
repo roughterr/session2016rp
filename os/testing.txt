@@ -1,0 +1,91 @@
+Завдання 1.
+1. Створено у домашньому каталозі каталог folder1, в ньому файл file1.txt і каталог folder2, командами:
+$ mkdir ~/folder1
+$ touch ~/folder1/file1.txt
+$ mkdir ~/folder1/folder2
+
+2. Запуск програми 2variant1task.sh з параметром ~/folder1 вивів на екран наступний результат:
+$ ./2variant1task.sh ~/folder1
+folder1
+	folder2
+studentnau1
+	Desktop
+	development
+	folder1
+	images
+home
+	studentnau1
+/
+	bin
+	boot
+	dev
+	disks
+	etc
+	home
+	lib
+	lib32
+	lib64
+	lost+found
+	media
+	mnt
+	opt
+	proc
+	root
+	run
+	sbin
+	sys
+	tmp
+	usr
+	var
+
+Як ми бачимо, програма вивела на екран ім’я каталогу folder2, але не вивела ім’я файлу file1.txt, що означає, що програма виводить лише імена каталогів.
+
+
+Завдання 2.
+1. Компіляція файлу, написаного на мові програмування C:
+$ gcc 2variant2task.c -o 2variant2task
+
+2. Створено у домашньому каталозі каталог folder3:
+$ mkdir ~/folder3
+
+3. Створено у каталозі folder3 порожні файли file3.conf, file4.txt і каталог folder4, командами:
+$ touch ~/folder3/file3.conf ~/folder3/file4.txt
+$ mkdir ~/folder3/folder4
+
+4. Створено порожні файли file5.txt і file6.conf, в каталозі folder4, командами:
+$ touch ~/folder3/folder4/file5.txt ~/folder3/folder4/file6.conf
+
+5. Запуск програми 2variant1task з каталогу folder4 і з параметром conf, і перевірка результатів:
+$ cd ~/folder3/folder4
+$ ~/nau/rgr/2variant2task.sh conf
+folder4
+	file6.conf
+folder3
+	file3.conf
+studentnau1
+home
+/
+
+Як ми бачимо, програма вивела на екран імена лише тих файлів, що мають розширення .conf.
+
+Завдання 3.
+1. Компіляція файлу, написаного на мові програмування C:
+$ gcc 2variant3task.c -o 2variant3task
+
+1. Створено у домашньому каталозі каталог folder5
+2. У каталозі folder5 створено файл 1.txt з наступним вмістом:
+Bread of deceit is sweet to a man; but afterwards his mouth shall be filled with gravel.
+
+3. Запущено програму 2variant2task.sh зі шляхом до файлу 1.txt і ключем 5, який використовується для шифрування. Вивід перенаправлено в файл 2.txt. Для цього була виконана наступна команда:
+$ ~/nau/rgr/2variant3task ~/folder5/1.txt 5 > ~/folder5/2.txt
+
+4. Перевірено, що файл 2.txt дійсно має зашифрований вміст:
+Gwjfi%tk%ijhjny%nx%x|jjy%yt%f%rfs@%gzy%fkyjw|fwix%mnx%rtzym%xmfqq%gj%knqqji%|nym%lwf{jq3
+
+5. Запущено програму 2variant2task.sh зі шляхом до файлу 2.txt і ключем -5. Вивід перенаправлено в файл 3.txt. Для цього була виконана наступна команда:
+$ ~/nau/rgr/2variant3task ~/folder5/2.txt -5 > ~/folder5/3.txt
+
+Ключ -5 використовується для того, щоб розшифрувати файл, який був зашифрований ключем 5. Тобто, щоб цією програмою розшифрувати файл, який був зашифрований з якимось ключем, розшифрувати його можна з таким самим ключем, але з протилежним знаком.
+
+5. Перевірено, що файл 3.txt містить розшифровані дані:
+Bread of deceit is sweet to a man; but afterwards his mouth shall be filled with gravel.
